@@ -23,7 +23,7 @@ const AuthForm = () => {
 //API Key we get from firebase setting button on left top.
     setIsLoading(true);   
     if (isLogin) {
-    } else {0
+    } else {
       fetch(
         'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyA24rZ7b6T3xYGRGIGhvWr0bEgMhb8wong',
         {
