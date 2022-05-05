@@ -55,7 +55,9 @@ const AuthForm = () => {
           throw new Error(errorMessage);
         });
       }
-    }).then(data => {
+    })
+    //Success Responce
+    .then(data => {
       console.log("Success", data);
     })
     .catch(err => {
