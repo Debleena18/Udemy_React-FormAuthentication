@@ -62,9 +62,12 @@ const AuthForm = () => {
       }
     })
     //Success Responce
+    //+data.expiresIn to convert in num then *1000 to convert time in ms
+    //For more details visit "Firebase Auth REST API Documentation"
     .then(data => {
       //console.log("Success", data);
-      authCtx.login(data.idToken);
+      const expirationTime = new Date((new Date().getTime() + (+data.expiresIn * 1000)));
+      authCtx.login(data.idToken, expirationTime.toISOString() );
       history.replace('/');
     })
     .catch(err => {
